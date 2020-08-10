@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/stephenMcMullinProjectFive/static/css/main.38f9d56b.chunk.css",
+    "main.js": "/stephenMcMullinProjectFive/static/js/main.cab63bb8.chunk.js",
+    "main.js.map": "/stephenMcMullinProjectFive/static/js/main.cab63bb8.chunk.js.map",
+    "runtime-main.js": "/stephenMcMullinProjectFive/static/js/runtime-main.2eb268dd.js",
+    "runtime-main.js.map": "/stephenMcMullinProjectFive/static/js/runtime-main.2eb268dd.js.map",
+    "static/js/2.eebb7b7f.chunk.js": "/stephenMcMullinProjectFive/static/js/2.eebb7b7f.chunk.js",
+    "static/js/2.eebb7b7f.chunk.js.map": "/stephenMcMullinProjectFive/static/js/2.eebb7b7f.chunk.js.map",
+    "index.html": "/stephenMcMullinProjectFive/index.html",
+    "precache-manifest.3bc82b6aa99e75d0029e9cf673e8eb21.js": "/stephenMcMullinProjectFive/precache-manifest.3bc82b6aa99e75d0029e9cf673e8eb21.js",
+    "service-worker.js": "/stephenMcMullinProjectFive/service-worker.js",
+    "static/css/main.38f9d56b.chunk.css.map": "/stephenMcMullinProjectFive/static/css/main.38f9d56b.chunk.css.map",
+    "static/js/2.eebb7b7f.chunk.js.LICENSE.txt": "/stephenMcMullinProjectFive/static/js/2.eebb7b7f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2eb268dd.js",
+    "static/js/2.eebb7b7f.chunk.js",
+    "static/css/main.38f9d56b.chunk.css",
+    "static/js/main.cab63bb8.chunk.js"
+  ]
+}
