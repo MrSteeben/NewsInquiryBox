@@ -33,8 +33,22 @@ $bodyFontColor: #272D2D; // dark green
 
 h1 {
     font-family: $primaryFont;
-    font-size: 20rem;
+    font-size: 10rem;
     text-transform: uppercase;
 }
+
+// GENERAL STYLES
+
+fieldset {
+    border: none;
+}
+
+img {
+    max-width: 50%;
+    height: 300px;
+    // object-fit: cover;
+}
+
+
 
 
