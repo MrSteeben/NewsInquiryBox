@@ -12,10 +12,11 @@ const ShowArticles = (props) => {
                     <div className="contentBox">
 
                         <a href={article.url}><h2>{article.title}</h2></a>
-                        <datetime>{article.publishedAt}</datetime>
+                        <h3>{article.author}</h3>
+                        <time>{article.publishedAt}</time>
                         <p>{article.description}</p>
                         <a href={article.url}>Read more...</a>
-                        <p>Source: {article.source.name}</p>
+                        <p className="newsSource">Source: {article.source.name}</p>
 
                     </div>
                 </div>

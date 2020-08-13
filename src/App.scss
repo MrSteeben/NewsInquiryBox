@@ -14,7 +14,7 @@ html {
 
 .wrapper {
     max-width: 1200px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -35,14 +35,28 @@ $bodyFontColor: #272D2D; // dark green
 
 h1,
 h2,
+h3,
+a,
+p,
+time {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
 h3 {
     font-family: $primaryFont;
-    font-size: 10rem;
+    font-size: 8rem;
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
 }
 
 body {
@@ -56,6 +70,7 @@ p {
 
 a {
     text-decoration: none;
+    font-size: 1.5rem;
     color: $bodyFontColor;
     transition: 0.2s ease-in;
 
@@ -65,30 +80,66 @@ a {
 }
 
 
-fieldset {
-    border: none;
-}
 
 img {
     max-width: 100%;
-    // height: 300px;
-    object-fit: contain;
+    min-width: 50%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
+// HEADER STYLES
+
+header {
+    .siteName {
+        width: 20%;
+    }
+}
+
+fieldset {
+    border: none;
+    text-align: center;
+    input,
+    label {
+        font-family: $bodyFont;
+        font-size: 1.5rem;
+    }
+}
+// ARTICLE STYLES
 .articleContainer {
     display: flex;
-    padding: 20px;
+    border: 5px solid green;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px grey;
     div {
         width: 50%;
     }
 
     .contentBox {
-        h2 {
-
+        padding: 10px;
+        .newsSource {
+            font-size: 1rem;
         }
     }
 }
 
+// MEDIA QUERIES
 
+@media (max-width: 760px) {
+    .articleContainer {
+        flex-direction: column;
+        div {
+            width: auto;
+        }
+    }
+
+    img {
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0px;
+        
+    }
+}
 
 

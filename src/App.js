@@ -78,7 +78,10 @@ class App extends Component {
     render() {
         return (
             <div className="header wrapper">
-                <h1>The News Inquiry Box</h1>
+                <div className="siteName">
+                    <h1>The News Inquiry Box</h1>
+                </div>
+                
                 <fieldset>
                     <form onSubmit={this.handleClick} action="submit">
                         <label htmlFor="newArticle">Search for a particular news article</label>

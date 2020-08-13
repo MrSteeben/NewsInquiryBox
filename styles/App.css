@@ -234,13 +234,109 @@ html {
 }
 
 .wrapper {
-  max-width: 1400px;
-  width: 95%;
+  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
 }
 
-h1 {
+h1,
+h2,
+h3,
+a,
+p,
+time {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
   font-family: "Roboto", sans-serif;
-  font-size: 10rem;
+  font-size: 8rem;
   text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #272D2D;
+}
+
+p {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #272D2D;
+  transition: 0.2s ease-in;
+}
+
+a:hover {
+  color: blue;
+}
+
+img {
+  max-width: 100%;
+  min-width: 50%;
+  display: block;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+header .siteName {
+  width: 20%;
+}
+
+fieldset {
+  border: none;
+  text-align: center;
+}
+
+fieldset input,
+fieldset label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.5rem;
+}
+
+.articleContainer {
+  display: flex;
+  border: 5px solid green;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.articleContainer div {
+  width: 50%;
+}
+
+.articleContainer .contentBox {
+  padding: 10px;
+}
+
+.articleContainer .contentBox .newsSource {
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .articleContainer {
+    flex-direction: column;
+  }
+  .articleContainer div {
+    width: auto;
+  }
+  img {
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
 }
