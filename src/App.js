@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import ShowArticles from './ShowArticles'
-
+import ShowArticles from './ShowArticles';
+import Qs from 'qs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import './App.scss';
 
 class App extends Component {
@@ -9,42 +12,39 @@ class App extends Component {
         super();
         this.state = {
             articles: [],
-            userInput: ''
-            
+            userInput: ''  
         }
     }
     
     // Call the news API with a default search value of Miscellaneous and store into initial state
     apiCall = (searchValue='Miscellaneous') => {
         axios({
-            url: 'https://newsapi.org/v2/everything',
+            url: 'https://proxy.hackeryou.com',
             method: 'GET',
             responseType: 'json',
+            paramsSerializer: function(params) {
+                return Qs.stringify(params, { arrayFormat: 'brackets' })
+            },
             params: {
-                q: searchValue,
-                apiKey: 'a488805f03984505903cf55f276798af',
-                language: 'en',
-                pageSize: 25
+                reqUrl: `https://newsapi.org/v2/everything`,
+                params: {
+                    apiKey: 'a488805f03984505903cf55f276798af',
+                    q: searchValue,
+                    language: 'en',
+                    pageSize: 25
+                    
+                }
+                
             }
     })
     .then( (response) => {
-
-        // filter() through response results to store article, and index to be used as a key
-        this.setState({
+        this.setState({ 
             articles: response.data.articles
         })
-        
-        // if (response.data.articles > 0) {
-        // } else {
-        //     alert("no articles, try again");
-        //     this.setState({
-        //         userInput: ''
-        //     }) 
-            
-        // }
 
     })
     .catch( () => {
+
         console.log("Something happened to axios call, look into it!");
     })
 
@@ -79,15 +79,16 @@ class App extends Component {
         return (
             <div className="header wrapper">
                 <div className="siteName">
+                    <FontAwesomeIcon icon={ faNewspaper } />
                     <h1>The News Inquiry Box</h1>
                 </div>
                 
                 <fieldset>
                     <form onSubmit={this.handleClick} action="submit">
-                        <label htmlFor="newArticle">Search for a particular news article</label>
-                        <input onChange={this.handleChange} value={this.state.userInput} type="text" id="newArticle" />
+                        <label htmlFor="newArticle">Search the News Inquiry Box: </label>
+                        <input onChange={this.handleChange} value={this.state.userInput} type="text" id="newArticle" placeholder="E.g. Health, Technology, Wired..." />
 
-                        <button onClick={this.handleClick}>Search</button>
+                        <button onSubmit={this.handleClick}><FontAwesomeIcon icon={ faSearch } aria-hidden="true"/></button>
                     </form>
                 </fieldset> 
 
@@ -99,13 +100,19 @@ class App extends Component {
                     }
                     
                 </div>
+                
+                <footer>
+                    <div className="wrapper">
+                        <p>Copyright &copy; 2020 Stephen McMullin | Made at <a href="http://junocollege.com">Juno College</a></p>
+
+                    </div>
+                </footer>
+                
+
             </div>
 
-        // Will need a ternary operator for displaying Articles and NoArticles
-        // Articles will display if result > 0, NoArticles will display if articles = 0
-
         );
-    }
+    } // END RENDER
 
 
 }
