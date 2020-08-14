@@ -226,7 +226,7 @@ html {
 
 .wrapper {
   max-width: 1200px;
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -269,11 +269,22 @@ a {
   text-decoration: none;
   font-size: 1.5rem;
   color: #272D2D;
+}
+
+a h2 {
   transition: 0.2s ease-in;
 }
 
-a:hover, a:focus {
+a h2:hover, a h2:focus {
   color: #AD2323;
+}
+
+a .articleContainer {
+  transition: all .2s ease-in-out;
+}
+
+a .articleContainer:hover {
+  transform: scale(1.1);
 }
 
 img {
@@ -339,7 +350,7 @@ fieldset input:focus {
   display: flex;
   border: 5px solid green;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   box-shadow: 5px 5px 5px grey;
 }
 
@@ -384,18 +395,100 @@ footer {
 footer p,
 footer a {
   font-size: 3rem;
-  font-weight: 700;
 }
 
-@media (max-width: 760px) {
+footer a {
+  transition: 0.2s ease-in;
+}
+
+footer a:hover, footer a:focus {
+  color: #AD2323;
+}
+
+@media (max-width: 1305px) {
+  h1 {
+    font-size: 7rem;
+  }
+  .siteName svg {
+    font-size: 17rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  .contentBox {
+    padding: 10px;
+  }
+  .contentBox h2 {
+    font-size: 2.7rem;
+  }
+  .contentBox h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 768px) {
   .articleContainer {
     flex-direction: column;
   }
   .articleContainer div {
     width: auto;
   }
+  h1 {
+    font-size: 6rem;
+  }
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .siteName svg {
+    font-size: 14rem;
+  }
   img {
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
+  }
+}
+
+@media (max-width: 570px) {
+  .siteName {
+    flex-direction: column;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  form input {
+    width: 100%;
+    margin: 10px 0;
+  }
+  form svg {
+    font-size: 11rem;
+  }
+  h1 {
+    font-size: 4.5rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    font-size: 3rem;
+  }
+  form input {
+    font-size: 1.5rem;
+  }
+  .siteName svg {
+    font-size: 8rem;
+  }
+  button svg {
+    font-size: 3rem;
   }
 }

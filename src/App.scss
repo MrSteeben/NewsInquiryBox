@@ -12,7 +12,7 @@ html {
 
 .wrapper {
     max-width: 1200px;
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -71,11 +71,21 @@ a {
     text-decoration: none;
     font-size: 1.5rem;
     color: $bodyFontColor;
-    transition: 0.2s ease-in;
 
-    &:hover,
-    &:focus {
-        color: #AD2323;
+    h2 {
+        transition: 0.2s ease-in;
+        &:hover,
+        &:focus {
+            color: #AD2323;
+        }
+    }
+
+    .articleContainer {
+        transition: all .2s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+
+        }
     }
 }
 
@@ -88,7 +98,6 @@ img {
     object-fit: cover;
 }
 
-
 // HEADER STYLES
 
 .siteName {
@@ -98,7 +107,6 @@ img {
     align-items: center;
     border-top: 5px double black;
     border-bottom: 5px double black;
-
     margin-top: 20px;
 
     svg {
@@ -106,7 +114,6 @@ img {
         font-size: 20rem;
     }
 }
-
 
 fieldset {
     border: none;
@@ -118,7 +125,6 @@ fieldset {
         color: black;
         background-color: $backgroundColor;
         margin-left: 20px;
-        
     }
     
     input,
@@ -126,6 +132,7 @@ fieldset {
         font-family: $bodyFont;
         font-size: 2rem;
     }
+
     input {
         width: 40%;
         border: none;
@@ -148,7 +155,7 @@ fieldset {
     display: flex;
     border: 5px solid green;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 5px 5px 5px grey;
     div {
         width: 50%;
@@ -159,19 +166,24 @@ fieldset {
         h2 {
             margin-bottom: 5px;
         }
+
         h3 {
             margin-bottom: 10px;
         }
+
         .publishedTime {
             margin-bottom: 5px;
         }
+
         .articleDescription {
             margin-bottom: 10px;
         }
+
         .readMore {
             font-weight: 700;
             
         }
+
         .newsSource {
             font-size: 1rem;
             margin-bottom: 30px;
@@ -187,13 +199,48 @@ footer {
     p,
     a {
         font-size: 3rem;
-        font-weight: 700;
+    }
+    
+    a {
+        transition: 0.2s ease-in;
+        &:hover,
+        &:focus {
+            color: #AD2323;
+        }
     }
 }
 
 // MEDIA QUERIES
 
-@media (max-width: 760px) {
+@media (max-width: 1305px) {
+    h1 {
+        font-size: 7rem;
+    }
+
+    .siteName {
+        svg {
+            font-size: 17rem;
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    .contentBox {
+        padding: 10px;
+
+        h2 {
+            font-size: 2.7rem;
+        }
+
+        h3 {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
     .articleContainer {
         flex-direction: column;
         div {
@@ -201,11 +248,83 @@ footer {
         }
     }
 
+    h1 {
+        font-size: 6rem;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .siteName {
+        svg {
+            font-size: 14rem;
+        }
+    }
+
     img {
         border-top-right-radius: 10px;
         border-bottom-left-radius: 0px;
-        
     }
 }
 
+@media (max-width: 570px) {
+    .siteName {
+        flex-direction: column;
+    }
+    
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        input {
+            width: 100%;
+            margin: 10px 0;
+        }
 
+        svg {
+            font-size: 11rem;
+        }
+    }
+
+    h1 {
+        font-size: 4.5rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    form {
+        input {
+            font-size: 1.5rem;
+        }
+    }
+
+    .siteName {
+        svg {
+            font-size: 8rem;
+        }
+    }
+
+    button {
+        svg {
+            font-size: 3rem;
+        }
+    }
+
+}

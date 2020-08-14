@@ -4,25 +4,25 @@ const ShowArticles = (props) => {
     return(
         props.articles.map( (article, index) => {
             return (
-                <div key={index} className="articleContainer">
+                <a href={article.url} className="articleBoxEffect" target="_blank">
+                    <div key={index} className="articleContainer">
                 
-                    <div>
-                        <img src={article.urlToImage} alt="" />
-                    </div>
-                    <div className="contentBox">
+                        <div>
+                            <img src={article.urlToImage} alt="" />
+                        </div>
+                        <div className="contentBox">
 
-                        <a href={article.url} target="_blank"><h2>{article.title}</h2></a>
-                        <h3>Author: {article.author}</h3>
-                        <p className="publishedTime">{article.publishedAt.slice(0, 10)}</p>
-                        <p className="newsSource">Source: {article.source.name}</p>
-                        <p className="articleDescription">{article.description}</p>
-                        <a href={article.url} target="_blank">Read more...</a>
-                        
+                            <a href={article.url} target="_blank"><h2>{article.title}</h2></a>
+                            <h3>Author: {article.author}</h3>
+                            <p className="publishedTime">{article.publishedAt.slice(0, 10)}</p>
+                            <p className="newsSource">Source: {article.source.name}</p>
+                            <p className="articleDescription">{article.description}</p>
+                            <a href={article.url} target="_blank">Read more...</a>
+                        </div>
                     </div>
-                </div>
+                </a>
             )
         }) 
-
     )
 }
 

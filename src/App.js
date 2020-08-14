@@ -32,47 +32,41 @@ class App extends Component {
                     q: searchValue,
                     language: 'en',
                     pageSize: 25
-                    
                 }
-                
             }
-    })
-    .then( (response) => {
-        this.setState({ 
-            articles: response.data.articles
         })
-
-    })
-    .catch( () => {
-
-        console.log("Something happened to axios call, look into it!");
-    })
+        .then( (response) => {
+            this.setState({ 
+                articles: response.data.articles
+            })
+        })
+        .catch( () => {
+            console.log("Something happened to axios call, look into it!");
+        })
 
     }
     
+    // When component loads call the API to load content
     componentDidMount() {
         this.apiCall();
     }
 
+    // Take the user's input and store it into state
     handleChange = (event) => {
         this.setState({
             userInput: event.target.value
         })
     }
     
+    // When user clicks, pass in the user's input stored into state to the API call
     handleClick = (e) => {
         e.preventDefault();
-        // console.log("click is working");
         this.apiCall(this.state.userInput);
 
-        
-        // example of SET STATE CALLBACK -- IMPORTANT ON PROJECT !!!!!!!
+        // Clear state after the search has completed
         this.setState({
             userInput: ""
         })
-        // , () => {
-        //     console.log(this.state.userInput);
-        // })
     }
 
     render() {
@@ -94,26 +88,23 @@ class App extends Component {
 
                 <div>
                     {
+                        // If articles is greater than 0, pass articles array to ShowArticles as a prop
                         this.state.articles.length > 0 
                         ? <ShowArticles articles={this.state.articles} />
-                        : <p>Try search again</p>//add a NoArticles.js
+                        // If no articles show up, prompt user to try again
+                        : <p>Try search again</p>
                     }
-                    
                 </div>
                 
                 <footer>
                     <div className="wrapper">
                         <p>Copyright &copy; 2020 Stephen McMullin | Made at <a href="http://junocollege.com">Juno College</a></p>
-
                     </div>
                 </footer>
-                
 
             </div>
-
-        );
+        ) // end return
     } // END RENDER
-
 
 }
 
