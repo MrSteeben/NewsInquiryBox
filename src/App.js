@@ -22,6 +22,7 @@ class App extends Component {
             url: 'https://proxy.hackeryou.com',
             method: 'GET',
             responseType: 'json',
+	    // paramsSerializer used to pass the array to the API
             paramsSerializer: function(params) {
                 return Qs.stringify(params, { arrayFormat: 'brackets' })
             },
