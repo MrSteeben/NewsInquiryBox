@@ -19,20 +19,17 @@ class App extends Component {
     // Call the news API with a default search value of Miscellaneous and store into initial state
     apiCall = (searchValue='Miscellaneous') => {
         axios({
-            url: 'https://proxy.hackeryou.com',
+            url: 'https://newsapi.org/v2/everything',
             method: 'GET',
             responseType: 'json',
             paramsSerializer: function(params) {
                 return Qs.stringify(params, { arrayFormat: 'brackets' })
             },
             params: {
-                reqUrl: `https://newsapi.org/v2/everything`,
-                params: {
-                    apiKey: 'a488805f03984505903cf55f276798af',
-                    q: searchValue,
-                    language: 'en',
-                    pageSize: 25
-                }
+                apiKey: 'a488805f03984505903cf55f276798af',
+                q: searchValue,
+                language: 'en',
+                pageSize: 25
             }
         })
         .then( (response) => {
