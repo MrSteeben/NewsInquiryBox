@@ -128,7 +128,7 @@ class App extends Component {
                 
                 <footer>
                     <div className="wrapper">
-                        <p>Copyright &copy; 2020 Stephen McMullin | Made at <a href="http://junocollege.com">Juno College</a></p>
+                        <p>Copyright &copy; 2023 Stephen McMullin</p>
                     </div>
                 </footer>
 
