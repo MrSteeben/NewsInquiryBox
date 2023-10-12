@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import ShowArticles from './ShowArticles';
+import axios from 'axios';
 import Qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
@@ -17,28 +17,61 @@ class App extends Component {
     }
     
     // Call the news API with a default search value of Miscellaneous and store into initial state
-    apiCall = (searchValue='Miscellaneous') => {
-        axios({
-            url: 'https://newsapi.org/v2/everything',
+    apiCall = (searchValue = 'Miscellaneous') => {
+
+        // original axios call
+        // axios({
+        //     //url: 'https://102.213.87.52',
+        //     method: 'GET',
+        //     responseType: 'json',
+
+        //     paramsSerializer: function(params) {
+        //         return Qs.stringify(params, { arrayFormat: 'brackets' })
+        //     },
+        //     params: {
+        //         reqUrl: `https://newsapi.org/v2/everything`,
+        //         params: {
+        //             apiKey: 'a488805f03984505903cf55f276798af',
+        //             q: searchValue,
+        //             language: 'en',
+        //             pageSize: 25
+
+        //         }
+
+        //     }
+
+        // })
+
+        // refactored axios call
+
+        axios.get('https://newsapi.org/v2/everything',
+        {
+            proxy: {
+                protocol: 'http',
+                host: '50.173.140.145',
+                port: 80
+            },
             method: 'GET',
             responseType: 'json',
             paramsSerializer: function(params) {
                 return Qs.stringify(params, { arrayFormat: 'brackets' })
             },
-            params: {
-                apiKey: 'a488805f03984505903cf55f276798af',
-                q: searchValue,
-                language: 'en',
-                pageSize: 25
+                params: {
+                    apiKey: 'a488805f03984505903cf55f276798af',
+                    q: searchValue,
+                    language: 'en',
+                    pageSize: 25
             }
         })
+
+
         .then( (response) => {
             this.setState({ 
                 articles: response.data.articles
             })
         })
         .catch( () => {
-            console.log("Something happened to axios call, look into it!");
+            console.log("Something happened to call, look into it!");
         })
 
     }
